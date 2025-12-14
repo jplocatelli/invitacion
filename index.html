@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra boda</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    .container {
+      max-width: 430px;
+      margin: auto;
+      background: white;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    .boton {
+      display: block;
+      margin: 20px;
+      padding: 18px;
+      background: #c8a24a;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="fondo.png" alt="Invitación">
+
+  <a id="confirmar" class="boton" href="#">
+    Confirmar asistencia
+  </a>
+
+  <a class="boton" href="https://maps.google.com/?q=TU_DIRECCION">
+    Cómo llegar
+  </a>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const invitado = params.get('i');
+
+  const links = {
+    "ana-pablo": "https://forms.gle/XXXX",
+    "familia-lopez": "https://forms.gle/YYYY"
+  };
+
+  if (links[invitado]) {
+    document.getElementById("confirmar").href = links[invitado];
+  } else {
+    document.getElementById("confirmar").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
