@@ -6,15 +6,7 @@
   <title>Nuestra boda</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-snap-type: y mandatory;
-    }
-    section {
-      scroll-snap-align: start;
-    }
-  </style>
+  <link href="./app.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -55,27 +47,7 @@
   </section>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Script de confirmación dinámico
-    const params = new URLSearchParams(window.location.search);
-    const invitado = params.get('i');
-
-    const links = {
-      "ana-pablo": "https://forms.gle/XXXX",
-      "familia-lopez": "https://forms.gle/YYYY"
-    };
-
-    if (links[invitado]) {
-      document.getElementById("confirmar").href = links[invitado];
-    } else {
-      document.getElementById("confirmar").style.display = "none";
-    }
-  </script>
+  <script src="./app.js"></script>
 
 </body>
 </html>
