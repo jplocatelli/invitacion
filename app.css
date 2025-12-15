@@ -5,3 +5,19 @@ html {
 section {
     scroll-snap-align: start;
 }
+.top, .top > *{
+    position: absolute;
+    top: 0;
+}
+.left, .left > *{
+    position: absolute;
+    left: 0;
+}
+.bottom, .bottom > *{
+    position: absolute;
+    bottom: 0;
+}
+.right, .right > *{
+    position: absolute;
+    right: 0;
+}
