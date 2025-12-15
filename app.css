@@ -1,9 +1,15 @@
 @font-face {
   font-family: Lovely;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
   src: url("./assets/Lovely-May-Regular.otf") format("otf");
 }
 @font-face {
   font-family: Fahkwang;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
   src: url("./assets/Fahkwang-Regular.ttf") format("ttf");
 }
 html {
