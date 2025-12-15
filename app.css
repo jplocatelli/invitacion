@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Lovely;
+  src: url("./assets/Lovely-May-Regular.otf") format("otf");
+}
+@font-face {
+  font-family: Fahkwang;
+  src: url("./assets/Fahkwang-Regular.ttf") format("ttf");
+}
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
