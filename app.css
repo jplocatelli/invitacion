@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Lovely';
   font-style: normal;
-  src: local('Lovely May Regular'), url("assets/Lovely-May-Regular.otf") format("otf");
+  src: local('Lovely May Regular'), url("../assets/Lovely-May-Regular.otf") format("otf");
 }
 @font-face {
   font-family: 'Fahkwang';
   font-style: normal;
-  src: local('Fahkwang Regular'), url("assets/Fahkwang-Regular.ttf") format("ttf");
+  src: local('Fahkwang Regular'), url("../assets/Fahkwang-Regular.ttf") format("ttf");
 }
 
 html {
