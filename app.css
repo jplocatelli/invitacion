@@ -1,12 +1,14 @@
 @font-face {
   font-family: 'Lovely';
   font-style: normal;
-  src: url("assets/Lovely-May-Regular.otf") format("otf");
+  font-weight: 200 700;
+  src: url("assets/Lovely-May-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: 'Fahkwang';
   font-style: normal;
-  src: url("assets/Fahkwang-Regular.ttf") format("ttf");
+  font-weight: 200 700;
+  src: url("assets/Fahkwang-Regular.ttf") format("truetype");
 }
 
 .scroller {
