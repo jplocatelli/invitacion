@@ -9,7 +9,7 @@
   src: url("assets/Fahkwang-Regular.ttf") format("ttf");
 }
 
-html {
+.scroller {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
