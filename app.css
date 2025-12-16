@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'Lovely';
   font-style: normal;
-  src: url("../assets/Lovely-May-Regular.otf") format("otf");
+  src: url("assets/Lovely-May-Regular.otf") format("otf");
 }
 @font-face {
   font-family: 'Fahkwang';
   font-style: normal;
-  src: url("../assets/Fahkwang-Regular.ttf") format("ttf");
+  src: url("assets/Fahkwang-Regular.ttf") format("ttf");
 }
 
-html {
+body {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
