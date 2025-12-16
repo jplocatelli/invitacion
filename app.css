@@ -17,6 +17,7 @@
 }
 section {
     scroll-snap-align: start;
+    overflow: hidden;
 }
 .top, .top > *{
     position: absolute;
