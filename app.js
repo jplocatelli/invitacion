@@ -18,11 +18,11 @@ if (links[invitado]) {
     document.getElementById("confirmar").style.display = "none";
 }
 
-document.addEventListener('aos:in', ({ detail }) => {
+document.addEventListener('aos:in:primary-text', ({ detail }) => {
   console.log('animated in', detail);
 });
 
-document.addEventListener('aos:out', ({ detail }) => {
+document.addEventListener('aos:out:primary-text', ({ detail }) => {
   console.log('animated out', detail);
 });
 
