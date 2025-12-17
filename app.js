@@ -18,6 +18,14 @@ if (links[invitado]) {
     document.getElementById("confirmar").style.display = "none";
 }
 
+document.addEventListener('aos:in', ({ detail }) => {
+  console.log('animated in', detail);
+});
+
+document.addEventListener('aos:out', ({ detail }) => {
+  console.log('animated out', detail);
+});
+
 // Wrap every letter in a span
 var textWrapper = document.querySelector('.aos-init.aos-animate[data-aos="primary-text"]');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
