@@ -22,7 +22,7 @@ if (links[invitado]) {
 var textWrapper = document.querySelector('.primary-text');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
+anime.timeline({loop: false})
   .add({
     targets: '.primary-text .letter',
     translateX: [40,0],
