@@ -1,5 +1,6 @@
 AOS.init({
     duration: 1000,
+    mirror: true,
 });
 
 // Script de confirmación dinámico
