@@ -14,8 +14,6 @@ const links = {
 
 if (links[invitado]) {
     document.getElementById("confirm").href = links[invitado];
-} else {
-    document.getElementById("confirm").style.display = "none";
 }
 
 document.addEventListener('aos:in:primary-text', ({ detail }) => {
