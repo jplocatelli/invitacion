@@ -47,3 +47,7 @@ section {
     position: absolute;
     right: 0;
 }
+
+.letter {
+  display: inline-flex;
+}
