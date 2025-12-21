@@ -15,7 +15,7 @@ if (links[invitado]) {
 }
 
 // Wrap every letter in a span
-var textWrapper = document.querySelectorAll('.primary-text, #nos-casamos, .secondary-text');
+var textWrapper = document.querySelectorAll('.primary-text, #nos-casamos');
 textWrapper.forEach(text => {
   text.innerHTML = text.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 });
@@ -23,16 +23,14 @@ textWrapper.forEach(text => {
 const primaryTextAnimation = {
   x: ['-14px', 0],
   filter: ['blur(16px)', 'blur(0px)'],
-  duration: 3000,
+  duration: 2000,
   delay: (el, i) => Math.random() * 1000
 };
 
 const secondaryTextAnimation = {
-  translateX: [40,0],
-  translateZ: 0,
   opacity: [0,1],
   easing: "easeOutExpo",
-  duration: 1200,
+  duration: 300,
   delay: (el, i) => 500 + 30 * i
 };
 
@@ -49,10 +47,15 @@ for (let index = 1; index < 5; index++) {
     ...primaryTextAnimation,
     autoplay: onScroll({...onScrollSettings, target: `#section${index} .primary-text`}),
   });
-  animate(`#section${index} .secondary-text .letter`, {
+
+  splitText(`#section${index} .secondary-text`, {
+    chars: { wrap: 'clip' },
+  })
+  .addEffect(({ chars }) => animate(chars, {
     ...secondaryTextAnimation,
     autoplay: onScroll({...onScrollSettings, target: `#section${index} .secondary-text`}),
-  });
+  }));
+
   animate(`#section${index} .ring-title`, {
     opacity: [0,1],
     filter: ['blur(16px)', 'blur(0px)'],
@@ -131,6 +134,15 @@ animate('#mariposa2', {
 });
 
 // Section 2 animations
+animate(`#section2 .divider`, {
+  scaleY: [0,1],
+  opacity: [0.5,1],
+  easing: "easeOutExpo",
+  duration: 700,
+  delay: 500,
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+});
+
 splitText('#month', {
   lines: { wrap: 'clip' },
 })
@@ -171,7 +183,7 @@ splitText('#hour', {
   x: ['100%', '0%'],
   duration: 750,
   ease: 'inOutElastic',
-  delay: 1500,
+  delay: 1000,
   autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
 }));
 
@@ -192,11 +204,104 @@ splitText('#day', {
 animate('#countdown', {
   opacity: [0,1],
   duration: 750,
-  delay: 1000,
+  delay: 1500,
   autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
 });
 
 // Section 3 animations
-
+for (let index = 1; index <= 3; index++) {
+  const dividerAnimation = animate(`#item${index} .divider`, {
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700
+  });
+  
+  const tl = createTimeline({
+    autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+    delay: (el, i) => 200*i,
+  })
+  .sync(dividerAnimation)
+  .add(`#item${index} .divider`, {
+    translateX: [document.querySelector(`#item${index} .list-text`).getBoundingClientRect().width + 10, 0],
+    easing: "easeOutExpo",
+    duration: 700,
+    delay: 100
+  })
+  .add(`#item${index} .list-text`, {
+    opacity: [0,1],
+    filter: ['blur(16px)', 'blur(0px)'],
+    easing: "easeOutExpo",
+    duration: 600,
+  })
+  .add(`#item${index} .icon`, {
+    scale: [0,1],
+    ease: spring({
+      bounce: 0.65,
+      duration: 400
+    }),
+    duration: 600,
+  });
+}
 
 // Section 4 animations
+
+animate(`#gift1`, {
+  scale: [0,1],
+  opacity: [0.5,1],
+  ease: spring({
+    bounce: 0.65,
+    duration: 400
+  }),
+  duration: 700,
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+});
+animate(`#gift2`, {
+  scale: [0,1],
+  opacity: [0.5,1],
+  ease: spring({
+    bounce: 0.65,
+    duration: 400
+  }),
+  duration: 700,
+  delay: 500,
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+});
+
+createTimeline({
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+  delay: 3000,
+})
+.sync(animate('#alias', {
+  opacity: [0,1],
+  duration: 750,
+  delay: 1500,
+  // autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+}))
+.add('#alias span', {
+  opacity: [0,1],
+  duration: 750,
+  delay: 1500,
+  delay: 100
+})
+
+animate(`#confirm`, {
+  scale: [0,1],
+  opacity: [0.5,1],
+  ease: spring({
+    bounce: 0.65,
+    duration: 400
+  }),
+  duration: 700,
+  delay: 500,
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+});
+
+animate(`#last-text`, {
+  scale: [3,1],
+  opacity: [0,1],
+  easing: "easeOutCirc",
+  duration: 800,
+  delay: 1500,
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+});
