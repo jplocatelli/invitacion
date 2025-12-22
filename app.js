@@ -27,18 +27,18 @@ const invitados ={
   "f4336554-48da-434d-b08a-7b5b6ae55c37": {
     "names": [
       "Maru",
-      "Gordo"
+      "Ro"
     ]
   },
   "b93a3366-7a0b-4304-9ec5-502e51959b90": {
     "names": [
-      "Mamá Hilda",
-      "Mateo"
+      "Mamá",
+      "Papá"
     ]
   },
   "513e99c9-afae-4f04-a6f1-5609de832095": {
       "names": [
-          "Marta"
+          "Martita"
       ]
   },
   "7aeb10b0-9c06-4cb1-a79e-f791775510ee": {
@@ -75,7 +75,7 @@ const invitados ={
   },
   "8e89f78f-4d05-4a81-80e5-67199c96ee38": {
     "names": [
-      "Claudio",
+      "Clau",
       "Dana",
       "Lolo"
     ]
@@ -94,7 +94,7 @@ const invitados ={
   "c786ae2d-5fcc-4e7c-a868-8598743a8bd0": {
     "names": [
       "Tía Mirta",
-      "Tio Roberto"
+      "Tío Roberto"
     ]
   },
   "51e95d60-8a18-48c2-af62-b8838c09c7c6": {
@@ -104,9 +104,9 @@ const invitados ={
     ]
   },
   "3d45e6ed-a7e1-4b40-b2d9-437e02cb3ac2": {
-      "names": [
-          "Tía Sonia"
-      ]
+    "names": [
+      "Tía Sonia"
+    ]
   },
   "0a0b1b97-70ac-450d-bdab-518bd3612840": {
       "names": [
@@ -125,7 +125,7 @@ const invitados ={
   },
   "4aa8c94e-9f56-4338-84b3-bb9564fcae23": {
       "names": [
-          "Tolo"
+          "Flor"
       ]
   },
   "2f1a96c4-b2e2-4dcc-90e4-8e158c160567": {
@@ -141,12 +141,12 @@ const invitados ={
   "b0896e8f-a7e2-4eba-803b-047a41bf4506": {
     "names": [
       "Marina",
-      "Miñon"
+      "Martín"
     ]
   },
   "baa27613-6a8f-402c-b933-87eed286f99f": {
       "names": [
-          "Abeja"
+          "Cin"
       ]
   },
   "2fafee73-8e70-4a26-93cc-258be66ff5b6": {
@@ -196,7 +196,7 @@ const invitados ={
   },
   "cf7b1448-c43b-4b42-bb37-c2717932dd98": {
       "names": [
-          "Fani"
+          "Fany"
       ]
   },
   "45d1ba95-af6c-45ec-8ae8-41c9f70aaa9b": {
@@ -218,7 +218,8 @@ const invitados ={
   "7750a12f-ee9e-4914-aff2-3554d2580978": {
     "names": [
       "Cami",
-      "Fiami"
+      "Fiami",
+      "Bebesita"
     ]
   },
   "c1e20e62-7d45-4870-b887-8c183b358525": {
@@ -310,6 +311,7 @@ if (invitado) {
   }
   document.getElementById("invitados").innerText = invitadosText;
   document.getElementById("saludo").innerText = cantInvitados > 1 ? "Los invitamos" : "Te invitamos";
+  document.getElementById("saludo2").innerText = cantInvitados > 1 ? "Los" : "Te";
 
   switch (cantInvitados) {
     case 1:
@@ -458,6 +460,20 @@ animate(`#section2 .divider`, {
   autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
 });
 
+splitText('#invitados', {
+  words: { wrap: 'clip' },
+})
+.addEffect(({ words }) => animate(words, {
+  y: [
+    { to: ['100%', '0%'] },
+  ],
+  opacity: [0,1],
+  duration: 750,
+  ease: 'out(3)',
+  delay: stagger(500),
+  autoplay: onScroll({...onScrollSettings, sync: 'play reset'}),
+}));
+
 splitText('#month', {
   lines: { wrap: 'clip' },
 })
@@ -556,6 +572,8 @@ for (let index = 1; index <= 3; index++) {
       duration: 400
     }),
     duration: 600,
+    alternate :true,
+    loop: index === 1,
   });
 }
 
