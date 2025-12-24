@@ -423,6 +423,26 @@ animate('#flores-bottom', {
 });
 
 // Section 1 animations
+animate('#section1', {
+  translateY: [0, -200, 0],
+  duration: 3000,
+  easing: 'easeInElastic',
+  loop: 1,
+  delay: 2500,
+  autoplay: true,
+});
+
+animate('#bottom-arrow', {
+  // translateY: [0, 200, 0],
+  opacity: [0, 1, 0],
+  scale: [1, 1.4, 1],
+  duration: 1500,
+  easing: 'easeInElastic',
+  loop: 6,
+  delay: 1500,
+  autoplay: true,
+});
+
 animate('#nos-casamos .letter', {
   scale: [0,1],
   opacity: [0,1],
