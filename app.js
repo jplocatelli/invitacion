@@ -88,7 +88,8 @@ const invitados ={
   },
   "41565088-54be-4178-94ce-205caedfd24e": {
       "names": [
-          "Tía Susi"
+          "Tía Susi",
+          "Fabio"
       ]
   },
   "c786ae2d-5fcc-4e7c-a868-8598743a8bd0": {
