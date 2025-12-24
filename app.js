@@ -292,6 +292,16 @@ const invitados ={
       "Ruben",
       "Lu"
     ]
+  },
+  "d2f3a4b5-6c78-4d90-8e12-3f4567890abc": {
+    "names": [
+      "Clau"
+    ]
+  },
+  "f1e2d3c4-b5a6-4f78-9e01-2a3456789bcd": {
+    "names": [
+      "Evi"
+    ]
   }
 }
 
