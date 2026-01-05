@@ -308,6 +308,12 @@ const invitados ={
     "names": [
       "Lu"
     ]
+  },
+  "a1b2c3d4-5e6f-47a8-9b0c-1234567890ab": {
+    "names": [
+      "Leo",
+      "Mili"
+    ]
   }
 }
 
